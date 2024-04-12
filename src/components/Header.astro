@@ -1,0 +1,45 @@
+---
+import "../css/style.scss"
+const header =[
+    {
+        href:"/web",
+        label:"webサイト制作",
+    },
+    {
+        href:"/logo",
+        label:"CI・ロゴ制作",
+    },
+    {
+        href:"/dtp",
+        label:"印刷物制作",
+    },
+    {
+        href:"/performance",
+        label:"制作実績",
+    },
+    {
+        href:"/corporate",
+        label:"会社情報",
+    },
+    {
+        href:"/contact",
+        label:"お問合わせ",
+    },
+];
+---
+
+<div class="headerFlex">
+    <img src="img/logo-h.png" alt="" width="300" >
+    <ul class="navFlex">
+        {
+            header.map((item)=>
+            <li>
+                <a href={item.href}>{item.label}</a>
+            </li>
+            )
+        }
+    </ul>
+    
+</div>
+
+

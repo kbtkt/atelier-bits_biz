@@ -1,0 +1,56 @@
+---
+const footer =[
+    {
+        href:"/",
+        label:"TOPページ",
+    },
+    {
+        href:"/web",
+        label:"webサイト制作",
+    },
+    {
+        href:"/logo",
+        label:"CI・ロゴ制作",
+    },
+    {
+        href:"/dtp",
+        label:"印刷物制作",
+    },
+    {
+        href:"/performance",
+        label:"制作実績",
+    },
+    {
+        href:"/corporate",
+        label:"会社情報",
+    },
+    {
+        href:"/contact",
+        label:"お問合わせ",
+    },
+    {
+        href:"/sitemap",
+        label:"サイトマップ",
+    },
+];
+---
+<footer>
+    <div class="footerGrid">
+        <div class="colum01">
+            <img src="img/logo-h.png" alt="" width="300" >
+            <div>
+                <a href="tel:+">TEL:048-834-6765</a>
+            </div>
+            <div>
+                <a>FAX:048-834-6766</a>
+            </div>
+        </div>
+        <div class="colum02">
+            <ul>
+                {footer.map((item)=>
+                <li><a href={item.href}>{item.label}</a></li>
+                )}
+            </ul>
+        </div>
+    </div>
+</footer>
