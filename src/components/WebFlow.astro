@@ -1,0 +1,51 @@
+---
+const webFlow =[
+    {
+        num:"/webFlow01.png",
+        title:"お問合わせ",
+        content:"まずはお問い合わせフォーム、お電話にてお気軽にお問い合わせください。",
+    },
+    {
+        num:"/webFlow02.png",
+        title:"ヒアリング",
+        content:"制作担当者がお客様の元にお伺いし、どのようなサイトにしたいのかといったWEBサイトへのご要望や企業理念、事業内容、事業の強み等をお伺いいたします。",
+    },
+    {
+        num:"/webFlow03.png",
+        title:"見積提出",
+        content:"ヒアリングの内容を基に仕様、ページ数を概算し、お見積りをご提出させていただきます。",
+    },
+    {
+        num:"/webFlow04.png",
+        title:"受注・制作開始",
+        content:"お見積もり内容にご納得いただけましたら正式なご契約となります。正式契約後、本格的に制作にかかります。制作日数は艘ページ数などにもよりますが、２ヶ月くらいになります。お急ぎの場合はご相談ください。",
+    },
+    {
+        num:"/webFlow05.png",
+        title:"校正",
+        content:"ひと通り作成した段階で当社テストサーバーにアップし、お客様にご案内いたします。本文の内容等をチェックしていただきます。",
+    },
+    {
+        num:"/webFlow06.png",
+        title:"運用テスト・納品",
+        content:"完成後、最終確認をいただきましたらお客様のサーバーにアップさせていただきます。",
+    },
+    {
+        num:"/webFlow07.png",
+        title:"更新・運用管理サービス",
+        content:"納品月より更新・管理運用サービスを開始いたします。",
+    },
+]
+---
+<div class="webFlow">
+    {webFlow.map((item,index)=>
+    <div class="webFlowItem">
+        <div class="number">
+            <img src={item.num} alt="" />
+            <h5>{item.title}</h5>
+        </div>
+        <p>{item.content}</p>
+        {index === 0 ? <div><slot /></div>:null}
+    </div>
+    )}
+</div>

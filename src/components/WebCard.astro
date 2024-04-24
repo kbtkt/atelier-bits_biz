@@ -1,0 +1,44 @@
+---
+const webCard =[
+    {
+        icon:"webCardIcon01.png",
+        title:"ドメインの取得及びレンタルサーバ手配",
+    },
+    {
+        icon:"webCardIcon02.png",
+        title:"写真撮影",
+    },
+    {
+        icon:"webCardIcon03.png",
+        title:"コーディング",
+    },
+    {
+        icon:"webCardIcon04.png",
+        title:"完成後の保守・運用",
+    },
+    {
+        icon:"webCardIcon05.png",
+        title:"SEO対策",
+    },
+    {
+        icon:"webCardIcon06.png",
+        title:"ロゴ制作",
+        href:"/logo",
+    },
+    {
+        icon:"webCardIcon07.png",
+        title:"印刷物制作",
+        href:"/dtp",
+    },
+]
+---
+<div class="domainToOperation">
+    {webCard.map((item,index)=>
+    <div class="webCard">
+        <img src={item.icon} alt=""/>
+        <h5>{item.title}</h5>
+        {index >= 5 ? <a href={item.href}>詳しくはこちら</a> :null}
+        <slot />
+    </div>
+    )}
+</div>

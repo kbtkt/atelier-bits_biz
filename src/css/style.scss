@@ -1,0 +1,115 @@
+
+// ------------
+// /web制作
+// ------------
+
+.domainToOperation {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 10px;
+  margin-top: 32px;
+  .webCard {
+    background: #eee;
+    border-radius: 5px;
+    text-align: center;
+    img {
+      display: block;
+      margin: 30px auto;
+    }
+    h5 {
+      width: 65%;
+      margin: 0 auto 10px;
+      font-weight: 700;
+    }
+    a {
+      display: inline-block;
+      background: #888;
+      color: #fff;
+      padding: 5px 20px 5px 10px;
+      border-radius: 15px;
+      font-size: 0.875rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-top: solid 2px #fff;
+        border-right: solid 2px #fff;
+        position: absolute;
+        right: 9px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+}
+
+.webFlow {
+  .webFlowItem {
+    .telAndMailBtn {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      color: #fff;
+      font-weight: 700;
+      margin-top: 24px;
+
+      .here {
+        border-radius: 5px;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        width: 480px;
+        height: 160px;
+        &:hover {
+          opacity: 0.6;
+          transition: all 0.4s;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto 20px;
+        }
+        a {
+          position: absolute;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          line-height: 220px;
+        }
+      }
+
+      .telHere {
+        font-size: 1.75rem;
+        background: #0e5da7;
+        padding: 20px 140px 30px;
+        font-family: "Sofia Sans Condensed", sans-serif;
+      }
+      .mailHere {
+        font-size: 1.25rem;
+        background: #f7c44a;
+        padding: 20px 70px 30px;
+      }
+    }
+    + .webFlowItem {
+      margin-top: 40px;
+    }
+    .number {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      h5 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+    p {
+      margin-top: 24px;
+    }
+  }
+}
+
