@@ -113,3 +113,53 @@
   }
 }
 
+// ------------
+// /CI・ロゴ制作
+// ------------
+
+.logoFlow {
+  .logoFlowItem {
+    border-radius: 10px;
+    position: relative;
+    + .logoFlowItem {
+      margin-top: 80px;
+    }
+    &:nth-child(1) {
+      background: #eaf3f7;
+    }
+    &:nth-child(2) {
+      background: #9fc8d9;
+    }
+    &:nth-child(3) {
+      background: #569ebd;
+      color: #f0f0f0;
+    }
+    &:nth-child(4) {
+      background: #30657c;
+      color: #fff;
+    }
+    &:not(:last-child)::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-top: solid 4px #0e5da7;
+      border-right: solid 4px #0e5da7;
+      position: absolute;
+      right: 50%;
+      bottom: -40px;
+      transform: translateX(-50%) rotate(135deg);
+    }
+
+    .logoFlowItemContents {
+      padding: 32px 100px 48px;
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      p {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
