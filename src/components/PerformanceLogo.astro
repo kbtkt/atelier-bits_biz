@@ -1,0 +1,27 @@
+---
+const performanceLogo = [
+    {
+        company:"ダイワグループ 様",
+        img:"/performance/logo/daiwagroup.png",
+    },
+    {
+        company:"茨城流通サービス 様 共配サービス",
+        img:"/performance/logo/ibarakiryutu.png",
+    },
+    {
+        company:"MIRAI 様",
+        img:"/performance/logo/mirai.png",
+    },
+
+]
+---
+<div class="performanceLogo" id="logo">
+    {
+        performanceLogo.map((item) =>
+            <div class="logoItem">
+                <img src={item.img} alt="" />
+                <p>{item.company}</p>
+            </div>
+        )
+    }
+</div>

@@ -1,0 +1,27 @@
+---
+const performanceOther = [
+    {
+        company:"酒井甚四郎商店 様",
+        href:"https://www.sakaijinshiro.com/",
+        img:"/performance/other/sakaijinshirou.jpg",
+    },
+    {
+        company:"ゾルキンホーキー 様",
+        href:"https://www.zorkin.co.jp/",
+        img:"/performance/other/zorkin.jpg",
+    },
+]
+---
+<h3 class="performanceWebTitle">その他業界</h3>
+<div class="performanceWeb Other">
+    {
+        performanceOther.map((item) =>
+            <div class="otherWebItem">
+                <a href={item.href}>
+                    <img src={item.img} alt="" />
+                </a>
+                <p>{item.company}</p>
+            </div>
+        )
+    }
+</div>

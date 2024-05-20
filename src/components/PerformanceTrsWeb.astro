@@ -1,0 +1,72 @@
+---
+const performanceTrs = [
+    {
+        company:"引越専門協同組合 様 オフィス移転ページ",
+        href:"https://www.8019.jp/",
+        img:"/performance/trs/hikkoshi.jpg",
+    },
+    {
+        company:"株式会社根本運送 様",
+        href:"https://www.nemoto-trs.co.jp/",
+        img:"/performance/trs/nemoto.jpg",
+    },
+    {
+        company:"株式会社凌雲物流 様",
+        href:"https://www.ryoun-logistics.jp/",
+        img:"/performance/trs/ryoun.jpg",
+    },
+    {
+        company:"株式会社コイデ・オートジー 様",
+        href:"https://www.koide-autoz.jp/",
+        img:"/performance/trs/koide.jpg",
+    },
+    {
+        company:"株式会社諸田トラフィック 様",
+        href:"https://www.morota-traffic.co.jp/",
+        img:"/performance/trs/morota.jpg",
+    },
+    {
+        company:"株式会社横急運輸 様",
+        href:"http://www.yokokyuunyu.co.jp/",
+        img:"/performance/trs/yokokyu.jpg",
+    },
+    {
+        company:"株式会社オリエンタル観光 様",
+        href:"http://www.oriental-kankou.co.jp/",
+        img:"/performance/trs/orientaru.jpg",
+    },
+    {
+        company:"株式会社ゲートオンロジスティクス 様",
+        href:"http://gate-on.co.jp/",
+        img:"/performance/trs/gateon.jpg",
+    },
+    {
+        company:"新寿堂運輸株式会社 様",
+        href:"https://www.shinjudou.com/",
+        img:"/performance/trs/shinjudou.jpg",
+    },
+    {
+        company:"ダイワグループ 様",
+        href:"http://daiwagroup-log.co.jp/index",
+        img:"/performance/trs/daiwagroup.jpg",
+    },
+    {
+        company:"金重運送株式会社 様",
+        href:"http://kanashige.com/",
+        img:"/performance/trs/kanashige.jpg",
+    },
+]
+---
+<h3 class="performanceWebTitle" id="webTrs">運送・物流業界</h3>
+<div class="performanceWeb Trs">
+    {
+        performanceTrs.map((item) =>
+        <div class="trsWebItem">
+            <a href={item.href}>
+                <img src={item.img} alt="" />
+            </a>
+            <p>{item.company}</p>
+        </div>
+        )
+    }
+</div>

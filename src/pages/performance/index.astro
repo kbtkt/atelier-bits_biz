@@ -1,0 +1,36 @@
+---
+import "../../css/style.scss";
+import Layout from '../../layouts/Layout.astro';
+import UnderSection from '../../components/UnderSection.astro';
+import PerformanceTrsWeb from "../../components/PerformanceTrsWeb.astro";
+import PerformanceOtherWeb from "../../components/PerformanceOtherWeb.astro";
+import PerformanceLogo from "../../components/PerformanceLogo.astro";
+import {Icon} from "astro-iconify"
+import TitleBar from "../../components/TitleBar.astro";
+---
+
+<Layout title="制作実績">
+  <TitleBar enTitle="PERFORMANCE" jaTitle="制作実績" />
+
+    <main>
+        <h3 class="performanceh3">制作実績</h3>
+        <div class="jumpBtn">
+            <a href="#webTrs">
+                <Icon name="flowbite:angle-down-outline" />
+                webサイト
+            </a>
+            <a href="#logo">
+                <Icon name="flowbite:angle-down-outline" />
+                CI・ロゴ
+            </a>
+        </div>
+        <UnderSection secTitle="webサイト制作実績">
+        </UnderSection>
+        <PerformanceTrsWeb />
+        <PerformanceOtherWeb />
+        <UnderSection secTitle="CI・ロゴ制作実績" >
+
+        </UnderSection>
+        <PerformanceLogo />
+    </main>
+</Layout>
