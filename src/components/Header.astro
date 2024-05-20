@@ -1,5 +1,6 @@
 ---
 import "../css/style.scss"
+import Drawer from "./react/Drawer"
 const header =[
     {
         href:"/web",
@@ -29,7 +30,9 @@ const header =[
 ---
 
 <div class="headerFlex">
-    <img src="img/logo-h.png" alt="" width="300" >
+    <a href="/">
+        <img src="" alt="ロゴ" width="300" >
+    </a>
     <ul class="navFlex">
         {
             header.map((item)=>
@@ -39,7 +42,7 @@ const header =[
             )
         }
     </ul>
-    
 </div>
+<Drawer client:load />
 
 
