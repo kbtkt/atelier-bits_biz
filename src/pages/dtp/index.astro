@@ -1,0 +1,27 @@
+---
+import "../../css/style.scss";
+import Layout from '../../layouts/Layout.astro';
+import UnderSection from '../../components/UnderSection.astro';
+import DtpCard from "../../components/DtpCard.astro";
+import TitleBar from "../../components/TitleBar.astro";
+---
+<Layout title="印刷物制作">
+  <TitleBar enTitle="DTP" jaTitle="印刷物制作" />
+
+    <main>
+        <UnderSection secTitle="会社案内からパンフレットフライヤーや名刺まで">
+            <p>
+                アトリエビッツでは会社案内や製品やサービスに関するパンフレットからチラシ、DM、名刺などさまざまな印刷物の制作（DTP）も承っております。WEBサイトだけでは、なかなかすぐに集客が伸びるものではありませんが、会社案内やパンフレットなどの印刷物とWEBサイトを上手に組み合わせ、活用することによって相乗効果が得られます。
+            </p>
+        </UnderSection>
+        <UnderSection secTitle="WEBサイトとのクロスメディアで相乗効果のあるPRを">
+            <p>WEBサイトの構築にともない、会社案内やパンフレット、細かいものでは名刺などもドメインを入れたものに新たに作りかえる必要が出てきます。通常であれば、これらのものは別途デザイン会社などに発注しなければならず、余計な手間もコストもかかってしまいます。</p>
+            <p>当社ではこれらの印刷物も承っておりますので、WEBサイト開設に併せて同時進行できるほか、写真や原稿なども同じ素材を使用することができますので、すべてのコンテンツに統一感を持たせることが出来き、ブランド構築にもプラスになります。
+                もちろん、ワンストップですべて当社にお任せいただければ、その分のコストも抑えることができます。</p>
+            <p>また、印刷物のみの発注も承っておりますので、名刺の作成から会社案内の作成まで、あらゆる印刷物についてお気軽にご相談ください。</p>
+        </UnderSection>
+        <DtpCard>
+            
+        </DtpCard>
+    </main>
+</Layout>
