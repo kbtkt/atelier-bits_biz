@@ -1,0 +1,16 @@
+---
+const topPerformanceCard =[
+    {img:"/performance/trs/nemoto.jpg"},
+    {img:"/performance/trs/ryoun.jpg"},
+    {img:"/performance/trs/koide.jpg"},
+];
+---
+<div class="topPerformanceCard">
+    {
+        topPerformanceCard.map((item)=>
+        <div class="performanceCard">
+            <img src={item.img} alt="">
+        </div>
+        )
+    }
+</div>

@@ -1,0 +1,27 @@
+---
+const topCard =[
+    {
+        href:"/web",
+		src:"/topWeb.jpg",
+        title:"WEBサイト制作",
+    },
+    {
+        href:"/logo",
+		src:"/topLogo.jpg",
+        title:"CI・ロゴ制作",
+    },
+    {
+        href:"/dtp",
+		src:"/topDtp.jpg",
+        title:"各種印刷物制作",
+    },
+];
+---
+
+<div class="topCard">
+	{topCard.map((item)=>
+	<a href={item.href}>
+        <div class="topCardItem"><img src={item.src} alt="" /><p>{item.title}</p></div>
+    </a>
+	)}
+</div>

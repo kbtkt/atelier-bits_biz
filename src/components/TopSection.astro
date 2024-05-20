@@ -1,0 +1,9 @@
+---
+const {enTitle,title} = Astro.props
+---
+
+<section>
+    <p class="titleEn">{enTitle}</p>
+    <h2 class="titleJa">{title}</h2>
+    <slot />
+  </section>
