@@ -4,13 +4,19 @@ import Layout from '../../layouts/Layout.astro';
 import UnderSection from '../../components/UnderSection.astro';
 import WebCard from "../../components/WebCard.astro";
 import WebFlow from "../../components/WebFlow.astro";
+import TitleBar from "../../components/TitleBar.astro";
 ---
 
 <Layout title="webサイト制作">
+	<TitleBar enTitle="WEBSITE" jaTitle="WEBサイト制作" />
+
 	<main>
 		<UnderSection secTitle="WEBサイトは企業にとって必要不可欠なメディアです">
 			<p>多彩なメディアが混在する中で、ユーザーの情報収集源としてのWEBサイトの役割は年々大きくなっています。特に企業の顔とも言うべきコーポレートサイトは単なる情報収集だけでなく、顧客や求職者、ビジネスパートナーなど、すべてのステークホルダーとの関係性を築いていく上での必要不可欠なメディアであり、単なるホームページでなく、企業の伝えるべきメッセージを、伝えたい相手にきちんと伝えることのできるメディアでなくてはなりません。</p>
 			<p>アトリエビッツでは、システムインテグレーターとしてさまざまなソリューションをご提供してきた経験から、WEBサイト制作も｢お客様の抱える問題をいかに解決に導くか」を主眼に、これまで数多くのコーポレートサイトを手がけてまいりました。「お客様の抱える問題は何なのか？」「情報を伝えるべきターゲットの優先順位は…？」こうした情報をひとつひとつ整理し、企業の顔としてのWEBサイトを構築していきます。</p>
+			<div>
+				<img class="webMedia" src="/webMedia.png"  alt="webメディア">
+			</div>
 		</UnderSection>
 		<UnderSection secTitle="ドメイン取得から保守運用まで">
 			<p>WEBサイトの公開までには、サイトデザインとは別に下記に挙げたようなさまざまな準備要件が発生します。
@@ -24,12 +30,12 @@ import WebFlow from "../../components/WebFlow.astro";
 			<WebFlow>
 				<div class="telAndMailBtn">
 					<div class="here telHere">
-						<img src="/webFlowTel.png" alt="">
-						<a href="">048-834-8765</a>
+						<img src="/webFlowTel.png" alt="お電話はこちら">
+						<a href="tel:048-834-8765">048-834-8765</a>
 					</div>
 					<div class="here mailHere">
-						<img src="/webFlowMail.png" alt="">
-						<a href="">お問合せメールフォームはこちら</a>
+						<img src="/webFlowMail.png" alt="メールフォームはこちら">
+						<a href="/contact">お問合せメールフォームはこちら</a>
 					</div>
 				</div>
 			</WebFlow>

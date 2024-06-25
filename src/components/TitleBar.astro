@@ -1,0 +1,13 @@
+---
+const {enTitle,jaTitle} = Astro.props
+---
+
+<div class="titleBar">
+    <slot />
+    <div class="flex">
+        <div class="border"></div>
+        <p>{enTitle}</p>
+    </div>
+    <h1>{jaTitle}</h1>
+</div>
+
