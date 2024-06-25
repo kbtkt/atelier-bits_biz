@@ -6,7 +6,6 @@ const Drawer: FC = () => {
   const [menu, setMenu] = useState(false);
   const handleDrawerMenu = () => {
     setMenu(!menu);
-    console.log(menu);
   };
   const headerSp = [
     {
@@ -42,7 +41,7 @@ const Drawer: FC = () => {
   return (
     <div className="sp-header">
       <a href="/">
-        <img src="logo.png" alt="ロゴ" />
+        <img src="/logo.png" alt="ロゴ" />
       </a>
       <button
         onClick={handleDrawerMenu}
