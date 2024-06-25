@@ -1,0 +1,102 @@
+---
+import TitleBar from "../../components/TitleBar.astro";
+import "../../css/style.scss";
+import Layout from '../../layouts/Layout.astro';
+const ACTION_URL = import.meta.env.FORM_POST_URL
+const RECAPTCHA_SITEKEY = import.meta.env.RECAPTCHA_SITE_KEY
+
+---
+<Layout title="お問合わせ">
+  <TitleBar enTitle="CONTACT" jaTitle="お問合わせ" />
+
+    <main>
+        <div class="otherSec contact">
+            <h3>お問合わせフォーム</h3>
+            <div class="otherSecContent">
+                <p>お問い合わせ、ご質問などは以下フォームよりご入力をお願いいたします。確認後、2～4営業日ほどでご連絡させていただきます。<br>
+                    ※携帯電話のメールアドレスをご連絡先に指定される方で、パソコンからのメール受信について拒否の設定をされている方は、パソコンからのメール受信を許可して頂いてからフォームの送信を行って下さい。</p>
+            </div>
+            <div class="contactForm">
+                <form action={ACTION_URL} method="POST" id="contactForm">
+                    <div class="formItem">
+                        <label for="name">
+                            <h5 class="labelReq">お名前</h5>
+                        </label>
+                        <input type="text" id="name" name="name"  required>
+                    </div>
+                    <div class="formItem">
+                        <label for="company">
+                            <h5 class="labelAny">会社名</h5>
+                        </label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="formItem">
+                        <label for="email">
+                            <h5 class="labelReq">メールアドレス</h5>
+                        </label>
+                        <input type="email" id="email" name="email"  required>
+                    </div>
+                    <div class="formItem">
+                        <label for="tel">
+                            <h5 class="labelReq">電話番号</h5>
+                        </label>
+                        <input type="tel" id="tel" name="tel"  required>
+                    </div>
+                    <div class="formItem">
+                        <label for="web">
+                            <h5 class="labelReq">お問合わせ種別</h5>
+                        </label>
+                        <ul>
+                            <li>
+                                <label for="web" class="radioFlex">
+                                    <input type="radio" id="web" name="category" value="WEB制作" checked>WEB制作
+                                </label>
+                            </li>
+                            <li>
+                                <label for="logo" class="radioFlex">
+                                    <input type="radio" id="logo" name="category" value="CI・ロゴ制作">CI・ロゴ制作
+                                </label>
+                            </li>
+                            <li>
+                                <label for="dtp" class="radioFlex">
+                                    <input type="radio" id="dtp" name="category" value="印刷物制作">印刷物制作
+                                </label>
+                            </li>
+                            <li>
+                                <label for="other" class="radioFlex">
+                                    <input type="radio" id="other" name="category" value="その他">その他
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="formItem">
+                        <label for="content">
+                            <h5 class="labelReq">お問合わせ内容</h5>
+                        </label>
+                        <textarea name="contact" id="content" rows="8" cols="5" required></textarea>
+                    </div>
+                    <div class="poricyCheck">
+                        <input type="checkbox" id="poricy">
+                        <label for="poricy">
+                          <a href="/poricy">プライバシーポリシー</a>
+                          をご確認いただき、チェックをお願いいたします。
+                        </label>
+                      </div>
+                      <button
+                        type="submit"
+                        class="submit g-recaptcha"
+                        data-callback="onSubmit"
+                        data-action="submit"
+                        data-sitekey={RECAPTCHA_SITEKEY}
+                      >
+                        送信する
+                      </button>
+                </form>
+                
+            </div>
+        </div>
+        
+   </main>
+</Layout>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="../../js/recaptcha.js" ></script>
