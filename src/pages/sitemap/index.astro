@@ -1,0 +1,59 @@
+---
+import TitleBar from "../../components/TitleBar.astro";
+import "../../css/style.scss";
+import Layout from '../../layouts/Layout.astro';
+
+const sitemap = [
+    {
+      href: "/",
+      label: "TOPページ",
+    },
+    {
+      href: "/web",
+      label: "webサイト制作",
+    },
+    {
+      href: "/logo",
+      label: "CI・ロゴ制作",
+    },
+    {
+      href: "/dtp",
+      label: "印刷物制作",
+    },
+    {
+      href: "/performance",
+      label: "制作実績",
+    },
+    {
+      href: "/corporate",
+      label: "会社情報",
+    },
+    {
+      href: "/contact",
+      label: "お問合わせ",
+    },
+    {
+      href: "/poricy",
+      label: "プライバシーポリシー",
+    },
+    {
+      href: "/sitemap",
+      label: "サイトマップ",
+    },
+    {
+      href: "https://atelier-bits.co.jp",
+      label: "弊社基幹業務サイト(別タブで開きます)",
+    },
+  ];
+---
+<Layout title="サイトマップ">
+  <TitleBar enTitle="SITEMAP" jaTitle="サイトマップ">
+  </TitleBar>
+    <div class="sitemap">
+        <ul>
+            {sitemap.map((item)=>
+            <li><a href={item.href}>{item.label}</a></li>
+            )}
+        </ul>
+    </div>
+</Layout>
