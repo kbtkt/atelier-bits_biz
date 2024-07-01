@@ -1,3 +1,489 @@
+// ------------
+// 変数、全体共通
+// ------------
+
+* {
+  outline: none;
+}
+html {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  scroll-padding: 200px;
+  scroll-behavior: smooth;
+  @media (max-width: 1200px) {
+    scroll-padding: 150px;
+  }
+}
+body {
+  color: #666;
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  background: #fafefe;
+  padding-top: 100px;
+  @media (max-width: 1200px) {
+    width: 94%;
+    margin: 0 auto;
+    padding-top: 75px;
+  }
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+img {
+}
+
+// ------------
+// Header
+// ------------
+.headerFlex {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  background: #fff;
+  opacity: 0.9;
+  z-index: 999;
+  // position: fixed;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.navFlex {
+  display: flex;
+  align-items: flex-end;
+
+  li {
+    list-style: none;
+    margin: 30px 10px;
+    padding: 5px 10px;
+    a {
+      text-decoration: none;
+      color: #666;
+      font-size: 20px;
+      font-weight: 700;
+      &:hover {
+        color: #39a2df;
+      }
+    }
+    &:last-child {
+      background: #39a2df;
+      border-radius: 5px;
+      a {
+        color: #fff;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+// ------------
+// Header-sp
+// ------------
+
+.sp-header {
+  display: none;
+  @media (max-width: 1200px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 75px;
+    margin: 0 auto;
+    background: #fff;
+    opacity: 0.9;
+  }
+  a {
+    display: inline-block;
+    padding-left: 10px;
+    img {
+      width: auto;
+      height: 75px;
+    }
+  }
+  .drawer_trigger {
+    position: fixed;
+    z-index: 999;
+    top: 2rem;
+    right: 3rem;
+    width: 36px;
+    height: 27px;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      display: block;
+      width: 36px;
+      height: 3px;
+      transition: transform 0.5s;
+      background: #42b5e7;
+
+      &:nth-child(1) {
+        position: absolute;
+        top: 6px;
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        bottom: 6px;
+      }
+    }
+  }
+}
+
+.drawer {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 66vw;
+  height: 100vh;
+  padding: 5rem 2rem 2rem;
+  background: #39a2df;
+  translate: 100vw;
+  transition: all 0.4s ease;
+
+  li {
+    margin: 40px 0;
+    a {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+  }
+}
+.open {
+  transition: all 0.6s ease;
+  translate: 0vw;
+  span {
+    &:nth-child(1) {
+      transform: translateY(6px) rotate(-45deg);
+      background: #fff;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(-6px) rotate(45deg);
+      background: #fff;
+    }
+  }
+}
+
+// ------------
+// Footer
+// ------------
+
+footer {
+  background: #a5a5a5;
+  padding: 50px 100px;
+  width: 100vw;
+  margin: calc(50% - 50vw);
+
+  .footerGrid {
+    display: grid;
+    width: 900px;
+    margin: auto;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+    .colum01 {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      font-weight: 700;
+      font-family: "Sofia Sans Condensed", sans-serif;
+
+      div {
+        padding-top: 20px;
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+    .colum02 {
+      margin: 40px 0;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 60px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+  }
+  .copyright {
+    color: #fff;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+}
+
+// ------------
+// TOPページ
+// ------------
+.fv {
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    width: 100vw;
+    margin-left: -3vw;
+    height: 60vh;
+    object-fit: cover;
+    object-position: 3% 100%;
+  }
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+
+  section {
+    padding: 80px 0 100px;
+
+    &:nth-of-type(2) {
+      width: 100vw;
+      margin: 0 calc(50% - 50vw);
+      background-color: #fcefd3;
+      padding: 80px 30% 100px;
+      @media (max-width: 1200px) {
+        padding: 80px 10% 100px;
+      }
+    }
+
+    .titleEn {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #39a2df;
+    }
+    .titleJa {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0e5da7;
+      margin: 8px 0 32px;
+    }
+    .topCard {
+      display: flex;
+      justify-content: center;
+      gap: 75px;
+      @media (max-width: 1200px) {
+        flex-wrap: wrap;
+      }
+
+      .topCardItem {
+        border: 1px solid #666;
+        border-radius: 8px;
+        overflow: hidden;
+        max-width: 350px;
+
+        p {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 40px 0 60px;
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: "→";
+            color: #0e5da7;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    .topPerformanceCard {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      @media (max-width: 1200px) {
+        // flex-direction: column;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+      .performanceCard {
+        img {
+          max-width: 360px;
+        }
+      }
+    }
+    .andMore {
+      display: flex;
+      margin-top: 32px;
+      justify-content: flex-end;
+      @media (max-width: 1200px) {
+        justify-content: center;
+      }
+      a {
+        display: block;
+        padding: 7px 20px 8px;
+        background: #0e5da7;
+        color: #fff;
+        font-weight: 500;
+        border-radius: 999px;
+        box-shadow: 2px 2px 5px #569ebd;
+        &:hover {
+          transition: all 0.4s;
+          opacity: 0.8;
+          box-shadow: none;
+        }
+      }
+    }
+    .comment {
+      margin: 0 100px;
+      padding: 60px 40px;
+      border: 1px solid #666;
+      border-radius: 10px;
+      position: relative;
+      @media (max-width: 1200px) {
+        margin: 0 5%;
+        padding: 20px;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        background-image: url(public/greet.png);
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        bottom: -50px;
+        right: -50px;
+        z-index: 998;
+        @media (max-width: 1200px) {
+          bottom: -85px;
+          right: -25px;
+        }
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+      }
+      p {
+        + p {
+          margin-top: 10px;
+          @media (max-width: 1200px) {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    .coreSystem {
+      margin-top: 80px;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      @media (max-width: 980px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      a {
+        display: block;
+        box-sizing: border-box;
+        &:hover {
+          opacity: 0.75;
+        }
+        .system {
+          padding: 10px 25px;
+          border-radius: 8px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          color: #fff;
+          font-size: 1.5rem;
+          font-weight: 700;
+          width: 350px;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .trs {
+          background: #2e82b3;
+        }
+        .exterior {
+          background: #40b32e;
+        }
+      }
+    }
+  }
+}
+// ------------
+// 下層ページ共通
+// ------------
+
+.secTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #39a2df;
+  margin: 80px 0 32px;
+}
+.secContent {
+  padding: 0 100px;
+  @media (max-width: 980px) {
+    padding: 0 20px;
+  }
+  p {
+    line-height: 1.8;
+    + p {
+      margin-top: 20px;
+    }
+  }
+}
+.titleBar {
+  padding: 50px 20%;
+  background: linear-gradient(
+    90deg,
+    rgba(247, 196, 74, 1),
+    rgba(247, 196, 74, 0.8),
+    rgba(247, 196, 74, 0.6),
+    rgba(247, 196, 74, 0.6),
+    rgba(255, 255, 255, 0.8)
+  );
+  opacity: 0.8;
+
+  @media (max-width: 1200px) {
+    width: 100vw;
+    margin-left: -3vw;
+    padding: 80px 10% 100px;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .border {
+      border: 1px solid #fff;
+      width: 5%;
+    }
+    p {
+      font-size: 1.125rem;
+      color: #fff;
+      font-family: "Sofia Sans Condensed", sans-serif;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    @media (max-width: 1000px) {
+      font-size: 2.5rem;
+    }
+  }
+}
 
 // ------------
 // /web制作
@@ -9,6 +495,9 @@
   grid-auto-rows: 250px;
   gap: 10px;
   margin-top: 32px;
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .webCard {
     background: #eee;
     border-radius: 5px;
@@ -45,6 +534,14 @@
     }
   }
 }
+.webMedia {
+  display: block;
+  margin-left: auto;
+  @media (max-width: 980px) {
+    width: 150px;
+    height: 150px;
+  }
+}
 
 .webFlow {
   .webFlowItem {
@@ -55,14 +552,18 @@
       color: #fff;
       font-weight: 700;
       margin-top: 24px;
+      @media (max-width: 980px) {
+        flex-direction: column;
+      }
 
       .here {
         border-radius: 5px;
         display: inline-block;
         position: relative;
         text-align: center;
-        width: 480px;
+        width: min(96%, 400px);
         height: 160px;
+
         &:hover {
           opacity: 0.6;
           transition: all 0.4s;
@@ -72,6 +573,7 @@
           display: block;
           margin: 0 auto 20px;
         }
+
         a {
           position: absolute;
           display: inline-block;
@@ -88,6 +590,11 @@
         background: #0e5da7;
         padding: 20px 140px 30px;
         font-family: "Sofia Sans Condensed", sans-serif;
+        a {
+          @media (min-width: 751px) {
+            pointer-events: none;
+          }
+        }
       }
       .mailHere {
         font-size: 1.25rem;
@@ -152,6 +659,9 @@
 
     .logoFlowItemContents {
       padding: 32px 100px 48px;
+      @media (max-width: 1000px) {
+        padding: 32px 20px 48px;
+      }
       h3 {
         font-size: 1.5rem;
         font-weight: 700;
@@ -163,3 +673,415 @@
   }
 }
 
+// ------------
+// /各種印刷物
+// ------------
+
+.dtpCard {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+  gap: 40px;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .dtpCardItem {
+    border: 1px solid #888;
+    border-radius: 10px;
+    padding: 40px 10px 0;
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    p {
+      margin-top: 48px;
+      + p {
+        margin-top: 16px;
+      }
+    }
+    img {
+      width: 100%;
+      margin-top: 40px;
+    }
+  }
+}
+
+// ------------
+// /制作実績
+// ------------
+
+.performanceh3 {
+  color: #39a2df;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 80px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    border-radius: 2px;
+    background: #707070;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.jumpBtn {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    font-size: 1.25rem;
+    // background: #42b5e7;
+    background: #f7c44a;
+    border-radius: 50px;
+    color: #fff;
+    padding: 5px 15px;
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.performanceWebTitle {
+  margin: 32px 0 16px;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.performanceWeb {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+  gap: 80px;
+  @media (max-width: 1200px) {
+    // grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .trsWebItem {
+    a {
+      img {
+        @media (max-width: 1200px) {
+          width: 90%;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+    p {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+  }
+  .otherWebItem {
+    a {
+      img {
+        @media (max-width: 1200px) {
+          width: 90%;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+    p {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.logoItem {
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+
+.performanceLogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 60px;
+  .logoItem {
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// ------------
+// /その他下層ページ共通
+// ------------
+
+.otherSec {
+  max-width: 1000px;
+  margin: 0 auto;
+  h3 {
+    color: #39a2df;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 60px;
+      height: 2px;
+      border-radius: 2px;
+      background: #707070;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  p {
+    margin-top: 80px;
+    + p {
+      margin-top: 20px;
+    }
+  }
+}
+.otherSecContent {
+  margin-top: 80px;
+}
+
+// ------------
+// /会社情報
+// ------------
+.corpoTable {
+  margin-top: 100px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  tr {
+    border-bottom: 1px solid #707070;
+    width: 1000px;
+    @media (max-width: 1000px) {
+      width: 90%;
+    }
+    th {
+      width: 30%;
+      padding: 24px 0 20px 30px;
+      border-bottom: 1px solid #39a2df;
+    }
+    td {
+      width: 70%;
+      padding: 24px 0 20px 40px;
+      @media (max-width: 1000px) {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+iframe {
+  @media (max-width: 1000px) {
+    width: 96%;
+  }
+}
+// ------------
+// /お問合せ
+// ------------
+.contactForm {
+  max-width: 600px;
+  margin: 64px auto 0;
+  .formItem {
+    padding-left: 60px;
+    + .formItem {
+      margin-top: 40px;
+    }
+
+    label {
+      h5 {
+        font-weight: 700;
+      }
+      .labelReq {
+        &::after {
+          content: "必須";
+          color: #ffffff;
+          background: #e64141;
+          font-size: 14px;
+          padding: 5px 10px;
+          border-radius: 5px;
+          margin-left: 20px;
+        }
+      }
+      .labelAny {
+        &::after {
+          content: "任意";
+          color: #ffffff;
+          background: #999;
+          font-size: 14px;
+          padding: 5px 10px;
+          border-radius: 5px;
+          margin-left: 20px;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      margin-top: 10px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+      li {
+        @media (max-width: 768px) {
+          padding-left: 16px;
+        }
+        + li {
+          padding-left: 16px;
+        }
+        input[type="radio"] {
+          accent-color: #0e5da7;
+        }
+        .radioFlex {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      padding: 5px;
+      border: 1px solid #666;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 75%;
+    }
+    textarea {
+      padding: 5px;
+      border: 1px solid #666;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 75%;
+    }
+  }
+}
+.poricyCheck {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  a {
+    text-decoration: underline;
+  }
+  p {
+    margin: 0;
+  }
+}
+.submit {
+  display: block;
+  padding: 8px 30px;
+  background: #f7c44a;
+  border-radius: 8px;
+  color: #fff;
+  margin: 40px auto 0;
+  box-shadow: 2px 2px 10px 0 #777;
+  &:hover {
+    background: #e3b036;
+    transition: all 0.3s;
+    box-shadow: none;
+    transition: all 0.5s;
+  }
+}
+
+.thxText {
+  max-width: 750px;
+  margin: 60px auto;
+  p {
+    &:first-child {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.thxBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  a {
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: #0e5da7;
+    color: #fff;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+// ------------
+// /プライバシーポリシー
+// ------------
+
+.privacyPoricy {
+  margin: 80px 0 100px;
+  h3 {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: #777;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+  .textbox {
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+}
+
+// ------------
+// /サイトマップ
+// ------------
+
+.sitemap {
+  width: 300px;
+  margin: 60px auto;
+  ul {
+    li {
+      margin-top: 20px;
+      font-size: 1.25rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "・";
+        color: #0e5da7;
+        font-size: 1.5rem;
+        margin-right: 5px;
+      }
+      a {
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
